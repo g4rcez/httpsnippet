@@ -53,7 +53,7 @@ module.exports = function (source, options) {
         code.unshift('const qs = require("querystring");')
         code.push('req.write(qs.stringify(%s));', stringifyObject(source.postData.paramsObj, {
           indent: '  ',
-          inlineCharacterLimit: 80
+          inlineCharacterLimit: 120
         }))
       }
       break
@@ -62,7 +62,7 @@ module.exports = function (source, options) {
       if (source.postData.jsonObj) {
         code.push('req.write(JSON.stringify(%s));', stringifyObject(source.postData.jsonObj, {
           indent: '  ',
-          inlineCharacterLimit: 80
+          inlineCharacterLimit: 120
         }))
       }
       break
@@ -75,7 +75,7 @@ module.exports = function (source, options) {
 
   code.push('req.end();')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

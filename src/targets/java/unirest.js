@@ -43,7 +43,7 @@ module.exports = function (source, options) {
 
   code.push(1, '.asString();')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

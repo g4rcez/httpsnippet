@@ -71,7 +71,7 @@ module.exports = function (source, options) {
   code.blank()
       .push('xhr.send(data);')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

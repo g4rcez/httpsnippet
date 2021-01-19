@@ -60,7 +60,7 @@ module.exports = function (source, options) {
   code.push('>>= fun (res, body_stream) ->')
       .push(1, '(* Do stuff with the result *)')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

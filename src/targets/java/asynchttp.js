@@ -44,7 +44,7 @@ module.exports = function (source, options) {
   code.blank()
   code.push('client.close();')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

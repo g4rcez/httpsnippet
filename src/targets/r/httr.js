@@ -143,7 +143,7 @@ module.exports = function (source, options) {
   // Print response
     .push('content(response, "text")')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

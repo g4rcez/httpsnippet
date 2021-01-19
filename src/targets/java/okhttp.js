@@ -67,7 +67,7 @@ module.exports = function (source, options) {
     .blank()
     .push('Response response = client.newCall(request).execute();')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

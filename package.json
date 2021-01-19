@@ -1,11 +1,12 @@
 {
-  "version": "1.24.0",
-  "name": "httpsnippet",
+  "version": "1.24.3",
+  "name": "@g4rcez/httpsnippet",
   "description": "HTTP Request snippet generator for *most* languages",
   "author": "Ahmad Nassri <ahmad@mashape.com> (https://www.mashape.com/)",
   "homepage": "https://github.com/Mashape/httpsnippet",
   "license": "MIT",
   "main": "src/index.js",
+  "typings": "index.d.ts",
   "bin": "bin/httpsnippet",
   "keywords": [
     "api",
@@ -42,6 +43,7 @@
   },
   "files": [
     "bin",
+    "index.d.ts",
     "src"
   ],
   "repository": "Mashape/httpsnippet",
@@ -50,7 +52,7 @@
   },
   "scripts": {
     "quick": "mocha --no-timeouts --fgrep 'Request Validation' --invert",
-    "pretest": "standard && echint",
+    "pretest": "echint",
     "test": "mocha --no-timeouts",
     "posttest": "exit 0 && npm run coverage",
     "coverage": "istanbul cover --dir coverage _mocha -- --fgrep 'Request Validation' --invert -R dot",

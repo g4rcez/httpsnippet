@@ -143,7 +143,7 @@ module.exports = function (source, options) {
   code.push(1, 'Console.WriteLine(body);')
   code.push('}')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

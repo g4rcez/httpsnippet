@@ -50,6 +50,6 @@ module.exports = function (command) {
     }
 
     code.push("$response = %s -Uri '%s' -Method %s %s", command, source.fullUrl, source.method, commandOptions.join(' '))
-    return code.join()
+    return code.join("\n")
   }
 }

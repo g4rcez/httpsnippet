@@ -52,7 +52,7 @@ module.exports = function (source, options) {
   )
   code.push('System.out.println(response.body());')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

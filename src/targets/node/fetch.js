@@ -94,7 +94,7 @@ module.exports = function (source, options) {
   code.blank()
   code.push('let url = \'' + url + '\';')
     .blank()
-  code.push('let options = %s;', stringifyObject(reqOpts, { indent: '  ', inlineCharacterLimit: 80 }))
+  code.push('let options = %s;', stringifyObject(reqOpts, { indent: '  ', inlineCharacterLimit: 120 }))
     .blank()
 
   if (includeFS) {
@@ -109,7 +109,7 @@ module.exports = function (source, options) {
       .push(1, '.then(json => console.log(json))')
       .push(1, '.catch(err => console.error(\'error:\' + err));')
 
-  return code.join()
+  return code.join("\n")
     .replace(/'encodedParams'/, 'encodedParams')
     .replace(/"fs\.createReadStream\(\\"(.+)\\"\)"/, 'fs.createReadStream("$1")')
 }

@@ -112,7 +112,7 @@ module.exports = function (source, options) {
     code.unshift('echo %s | ', shell.quote(source.postData.text))
   }
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

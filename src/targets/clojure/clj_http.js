@@ -141,7 +141,7 @@ module.exports = function (source, options) {
     code.push('(client/%s "%s" %s)', source.method.toLowerCase(), source.url, padBlock(11 + source.method.length + source.url.length, jsToEdn(filterEmpty(params))))
   }
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

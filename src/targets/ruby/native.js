@@ -55,7 +55,7 @@ module.exports = function (source, options) {
       .push('response = http.request(request)')
       .push('puts response.read_body')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

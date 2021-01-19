@@ -81,7 +81,7 @@ module.exports = function (source, options) {
       }
   }
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

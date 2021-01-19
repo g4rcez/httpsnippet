@@ -53,7 +53,7 @@ module.exports = function (source, options) {
       }
   }
 
-  code.push('var options = %s;', stringifyObject(reqOpts, { indent: '  ', inlineCharacterLimit: 80 }))
+  code.push('var options = %s;', stringifyObject(reqOpts, { indent: '  ', inlineCharacterLimit: 120 }))
     .blank()
 
   code.push(util.format('axios.request(options).then(%s', 'function (response) {'))
@@ -62,7 +62,7 @@ module.exports = function (source, options) {
       .push(1, 'console.error(error);')
       .push('});')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

@@ -39,7 +39,7 @@ module.exports = function (source, options) {
   code.blank()
       .push('CURLcode ret = curl_easy_perform(hnd);')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

@@ -124,7 +124,7 @@ module.exports = function (source, options) {
       .push('                                            }];')
       .push('[dataTask resume];')
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

@@ -40,7 +40,7 @@ module.exports = function (source, options) {
   }
 
   code.push('IRestResponse response = client.Execute(request);')
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

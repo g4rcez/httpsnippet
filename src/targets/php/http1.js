@@ -85,7 +85,7 @@ module.exports = function (source, options) {
         .push('?>')
   }
 
-  return code.join()
+  return code.join("\n")
 }
 
 module.exports.info = {

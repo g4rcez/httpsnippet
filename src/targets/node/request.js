@@ -104,7 +104,7 @@ module.exports = function (source, options) {
     code.unshift("const fs = require('fs');")
   }
 
-  code.push('const options = %s;', stringifyObject(reqOpts, { indent: '  ', inlineCharacterLimit: 80 }))
+  code.push('const options = %s;', stringifyObject(reqOpts, { indent: '  ', inlineCharacterLimit: 120 }))
     .blank()
 
   code.push(util.format('request(options, %s', 'function (error, response, body) {'))
@@ -115,7 +115,7 @@ module.exports = function (source, options) {
       .push('});')
       .blank()
 
-  return code.join().replace('"JAR"', 'jar').replace(/'fs\.createReadStream\("(.+)"\)'/g, "fs.createReadStream('$1')")
+  return code.join("\n").replace('"JAR"', 'jar').replace(/'fs\.createReadStream\("(.+)"\)'/g, "fs.createReadStream('$1')")
 }
 
 module.exports.info = {
